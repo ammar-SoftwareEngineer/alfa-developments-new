@@ -1,0 +1,268 @@
+<!-- 
+  ##################################################
+  #   Partial: رأس الموقع — يُحمَّل داخل #header   #
+  ##################################################
+-->
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid d-flex justify-content-between align-items-center w-100 px-md-5 px-3">
+    <a class="navbar-brand w-auto" href="index.html">
+      <img
+        src="./assets/images/logo/logo.png"
+        alt="ألفا للتنمية العمرانية"
+        width="90"
+      />
+    </a>
+
+    <div class="d-flex d-lg-none align-items-center gap-2">
+      <button
+        class="navbar-toggler shadow-none border-0"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#mobileMenu"
+        aria-controls="mobileMenu"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars fs-2"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      <ul class="navbar-nav gap-lg-2 gap-0 align-items-lg-center mx-auto ">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html">نبذة عنا</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link "
+            href="#"
+            id="navProjectsDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >مشاريعنا
+            <i class="fas fa-chevron-down small opacity-75" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navProjectsDropdown">
+            <li><a class="dropdown-item" href="./projects.html">الكل</a></li>
+            <li><a class="dropdown-item" href="./projects.html">القرنفل</a></li>
+            <li><a class="dropdown-item" href="./projects.html">كمبوند المعادى</a></li>
+            <li><a class="dropdown-item" href="./projects.html">النرجس الجديدة</a></li>
+            <li><a class="dropdown-item" href="./projects.html">بيت الوطن</a></li>
+            <li><a class="dropdown-item" href="./projects.html">البنفسج</a></li>
+            <li><a class="dropdown-item" href="./projects.html">الأندلس</a></li>
+            <li><a class="dropdown-item" href="./projects.html">شمال الرحاب</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./services.html">الخدمات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./offers.html">العروض</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link "
+            href="#"
+            id="navPastDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >سابقه الاعمال
+            <i class="fas fa-chevron-down small opacity-75" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navPastDropdown">
+            <li><a class="dropdown-item" href="./past-projects.html">الكل</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">البنفسج</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">النخيل</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">النرجس</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">القرنفل</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">الأندلس</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">الحى الأول</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">الأمن العام</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">الياسمين</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">غرب ارابيلا</a></li>
+            <li><a class="dropdown-item" href="./past-projects.html#portfolio">جنوب الاكاديمية</a></li>
+          </ul>
+        </li>
+      
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link "
+            href="#"
+            id="navTrackDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >تابع مشروعك
+            <i class="fas fa-chevron-down small opacity-75" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navTrackDropdown">
+            <li><a class="dropdown-item" href="./track-project.html">الكل</a></li>
+            <li><a class="dropdown-item" href="./track-project.html#maadi">كمبوند المعادي</a></li>
+            <li><a class="dropdown-item" href="./track-project.html#andalus">الأندلس</a></li>
+            <li><a class="dropdown-item" href="./track-project.html#qarnafel">القرنفل فيلات</a></li>
+          </ul>
+        </li>
+       
+      </ul>
+      <ul class="navbar-nav gap-lg-2 gap-0 align-items-lg-center ">
+        <li class="nav-item ">
+          <a class=" btn-contact" href="./contact.html">اتصل بنا</a>
+        </li>
+      
+        <li class="nav-item">
+          <a href="#" class="btn-lang">EN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div
+    class="offcanvas offcanvas-end d-lg-none px-4 bg-light"
+    id="mobileMenu"
+    tabindex="-1"
+    aria-labelledby="mobileMenuLabel"
+  >
+    <div class="offcanvas-header">
+      <a class="navbar-brand w-100" href="./index.html">
+        <img
+          src="./assets/images/logo/logo.png"
+          alt="ألفا للتنمية العمرانية"
+          width="125"
+        />
+      </a>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <ul class="navbar-nav gap-1">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html">عن الشركة</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex justify-content-between align-items-center w-100"
+            data-bs-toggle="collapse"
+            href="#offcanvasProjectsSub"
+            role="button"
+            aria-expanded="false"
+            aria-controls="offcanvasProjectsSub"
+          >
+            مشاريعنا
+            <i class="fas fa-chevron-down small opacity-75" aria-hidden="true"></i>
+          </a>
+          <div class="collapse" id="offcanvasProjectsSub">
+            <ul class="list-unstyled border-start border-2 ps-3 ms-1 my-2 border-secondary-subtle">
+              <li><a class="nav-link py-1 small" href="./projects.html">الكل</a></li>
+              <li><a class="nav-link py-1 small" href="./projects.html">القرنفل</a></li>
+              <li><a class="nav-link py-1 small" href="./projects.html">كمبوند المعادى</a></li>
+              <li><a class="nav-link py-1 small" href="./projects.html">النرجس الجديدة</a></li>
+              <li><a class="nav-link py-1 small" href="./projects.html">بيت الوطن</a></li>
+              <li><a class="nav-link py-1 small" href="./projects.html">البنفسج</a></li>
+              <li><a class="nav-link py-1 small" href="./projects.html">الأندلس</a></li>
+              <li><a class="nav-link py-1 small" href="./projects.html">شمال الرحاب</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./offers.html">العروض</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex justify-content-between align-items-center w-100"
+            data-bs-toggle="collapse"
+            href="#offcanvasPastSub"
+            role="button"
+            aria-expanded="false"
+            aria-controls="offcanvasPastSub"
+          >
+            سابقه الاعمال
+            <i class="fas fa-chevron-down small opacity-75" aria-hidden="true"></i>
+          </a>
+          <div class="collapse" id="offcanvasPastSub">
+            <ul class="list-unstyled border-start border-2 ps-3 ms-1 my-2 border-secondary-subtle">
+              <li><a class="nav-link py-1 small" href="./past-projects.html">الكل</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">البنفسج</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">النخيل</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">النرجس</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">القرنفل</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">الأندلس</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">الحى الأول</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">الأمن العام</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">الياسمين</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">غرب ارابيلا</a></li>
+              <li><a class="nav-link py-1 small" href="./past-projects.html#portfolio">جنوب الاكاديمية</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./services.html">الخدمات</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex justify-content-between align-items-center w-100"
+            data-bs-toggle="collapse"
+            href="#offcanvasTrackSub"
+            role="button"
+            aria-expanded="false"
+            aria-controls="offcanvasTrackSub"
+          >
+            تابع مشروعك
+            <i class="fas fa-chevron-down small opacity-75" aria-hidden="true"></i>
+          </a>
+          <div class="collapse" id="offcanvasTrackSub">
+            <ul class="list-unstyled border-start border-2 ps-3 ms-1 my-2 border-secondary-subtle">
+              <li><a class="nav-link py-1 small" href="./track-project.html">الكل</a></li>
+              <li><a class="nav-link py-1 small" href="./track-project.html#maadi">كمبوند المعادي</a></li>
+              <li><a class="nav-link py-1 small" href="./track-project.html#andalus">الأندلس</a></li>
+              <li><a class="nav-link py-1 small" href="./track-project.html#qarnafel">القرنفل فيلات</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contact.html">اتصل بنا</a>
+        </li>
+  
+      </ul>
+      <ul class="list-unstyled list-contact px-2 pt-4 rounded-4">
+        <li class="mb-4 pb-2 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <i class="fa-solid fa-envelope fs-5 main-color"></i>
+            <div>
+              <h3 class="fs-6 fw-bold">البريد</h3>
+              <a href="mailto:info@alfa-developments.com" class="text-decoration-none fs-6 small">info@alfa-developments.com</a>
+            </div>
+          </div>
+        </li>
+        <li class="mb-4 pb-2 border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <i class="fa-solid fa-phone-volume fs-5 main-color"></i>
+            <div>
+              <h3 class="fs-6 fw-bold">الهاتف</h3>
+              <a href="tel:+201000713131" class="fs-6 d-block" dir="ltr">+20 10 00713131</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="d-flex align-items-center gap-3">
+            <i class="fa-solid fa-map-marker-alt fs-5 main-color"></i>
+            <div>
+              <h3 class="fs-6 fw-bold">العنوان</h3>
+              <span class="fs-6 small">35 عمارات البنفسج — التسعين الشمالي، التجمع الأول</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

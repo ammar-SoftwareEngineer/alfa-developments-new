@@ -259,33 +259,68 @@ body {
 ##################################################
 */
 
-.fixed{
-  background: var(--white-color) !important;
+.fixed {
   .navbar {
     box-shadow: var(--box-shadow);
-    
+    background: var(--white-color) !important;
 
     .nav-link {
-      color: var(--main-color);
+      position: relative;
+      /* display: inline-block; */
+      padding: 10px 24px;
+
+      font-size: 0.95rem;
+      color: var(--black-color) !important;
+      border-radius: 0px;
+      text-decoration: none;
+      transition: color 0.3s ease, font-weight 0.3s ease;
+      z-index: 1;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+
+        background: var(--black-color) !important;
+
+        transition: width 0.4s ease;
+        z-index: -1;
+      }
 
       &:hover {
-        color: var(--main-color);
+        color: var(--black-color) !important;
+        &::before {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        color: var(--black-color) !important;
+        &::before {
+          width: 100%;
+          transition: width 0.25s ease-in-out;
+        }
       }
     }
 
     .navbar-brand img {
-      filter: brightness(0) invert(1);
+      filter: brightness(1) invert(0);
     }
 
     .navbar-toggler {
-      color: var(--white-color);
+      color: var(--black-color);
 
       i {
-        color: var(--main-color);
+        color: var(--black-color);
       }
     }
   }
 }
+
 
 
 
@@ -331,7 +366,8 @@ body {
   width: 100%;
   z-index: 999;
   transition: all 0.4s ease;
-
+background: rgba(29, 74, 151, 0.402);
+backdrop-filter: blur(10px);
   .navbar-nav {
     margin-inline-start: auto;
 
@@ -345,7 +381,7 @@ body {
         /* display: inline-block; */
         padding: 10px 24px;
         font-size: 0.95rem;
-        color: var(--main-color);
+        color: var(--white-color);
         border-radius: 25px;
         text-decoration: none;
         transition:

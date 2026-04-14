@@ -1,35 +1,78 @@
 :root {
   --main-color: #1d4a97;
-
-  --second-color: #eb8927;
-  --black-color: #000000;
+  --second-color: #f9f9f9;
+  --third-color: #d33516;
   --white-color: #ffffff;
-  --background-color: linear-gradient(135deg, var(--main-color) 0%, var(--second-color) 100%);
-  --background-color-hover: linear-gradient(-135deg, var(--main-color) 0%, var(--second-color) 100%);
-  --box-shadow: 0 8px 24px rgba(29, 74, 151, 0.18);
-  --radius-0: 0px;
-  --radius-sm: 6px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
+  --background-color: rgba(192, 192, 192, 0.2);
+  --placeholder-color: #a1a1a1;
+  --box-shadow: rgba(0, 0, 0, 0.2) 0px 9px 32px;
+}
+@media (max-width: 576px) {
 }
 @media (max-width: 768px) {
-  .projects-tabs-wrap {
-    display: flex;
-    justify-content: flex-start !important;
-
+  .counter-grid {
+    padding: 60px 30px;
+    border-radius: 0;
+    background-color: var(--background-color);
   }
-  .pd-video-card {
-
-    border: 1px solid rgba(15, 23, 42, 0.07);
-    border-radius: var(--radius-md);
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-    height: 40vh;
+  .about-section {
+    height: 100%;
+    .img-one {
+      img {
+        height: 400px !important;
+        width: 100%;
+      }
+    }
+    .img-two {
+      display: none;
+    }
   }
+  .swiper-button-prev,.swiper-button-next{
+    display: none;
+  }
+  .project-card {
+    img {
+      height: 400px;
+    }
+  }
+
+  .latest-projects-grid .project-card img {
+    height: clamp(200px, 52vw, 360px);
+  }
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 1200px) {
+  .about-section {
+    .img-one {
+      img {
+        height: 600px;
+        width: 100%;
+      }
+    }
+    .header-section {
+      h3 {
+        font-size: 40px;
+      }
+    }
+    .img-two {
+      bottom: -25px;
+      background-color: transparent;
+    }
+    p {
+      font-size: 16px;
+    }
+    li {
+      font-size: 15px;
+      color: #555151;
+    }
+  }
+
 }
 
 @media (min-width: 992px) {
-  .projects-tabs.nav-pills {
-    flex-wrap: wrap;
-  }
 }
-
+@media (min-width: 1200px) {
+}

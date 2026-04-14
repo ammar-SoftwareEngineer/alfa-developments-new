@@ -23,20 +23,30 @@
     const navHeight = $nav.outerHeight();
     const $hero = $("#hero-pages");
     const $navLinks = $(".navbar-nav .nav-link");
-    const rawPath = window.location.pathname.split("/").pop() || "";
-    const currentPage = rawPath === "" ? "index.html" : rawPath;
+    const currentPage = window.location.pathname.split("/").pop();
 
     /*=============================
         Back To Top Button
     =============================*/
-    $window.on("scroll", () => {
-      $backTopDiv.toggleClass("show", $window.scrollTop() > 100);
-      $nav.toggleClass("fixed-top", $window.scrollTop() > navHeight);
+    $(window).on("scroll", function () {
+      var scrollTop = $(window).scrollTop();
+      var scrollHeight = $(document).height() - $(window).height();
+      var scrollPercent = (scrollTop / scrollHeight) * 30; // Adjust progress scale if needed
+
+      // Show/hide back-to-top button
+      if (scrollTop > 100) $backTop.css("display", "flex");
+      else $backTop.css("display", "none");
+
+      // Update vertical progress bar height
+      $progressBar.css("height", scrollPercent + "%");
+
+      // Add fixed class to nav when scrolling past its height
+      $nav.toggleClass("fixed", scrollTop > navHeight);
     });
 
-    $backTopLink.on("click", (e) => {
-      e.preventDefault();
-      $("html, body").animate({ scrollTop: 0 }, 400);
+    // Smooth scroll to top on click
+    $backTop.on("click", function () {
+      $("html, body").animate({ scrollTop: 0 }, 600);
     });
 
 
@@ -44,17 +54,9 @@
         Active Navigation Link
     =============================*/
     $navLinks.each(function () {
-      const href = $(this).attr("href") || "";
-      if (href === "#" || href === "./#" || href.startsWith("#")) return;
-      const linkPage = href.replace(/^\.\//, "").split("#")[0];
+      const linkPage = $(this).attr("href").replace("./", "");
       $(this).toggleClass("active", linkPage === currentPage);
     });
-
-    $(".btn-contact").each(function () {
-      const href = ($(this).attr("href") || "").replace(/^\.\//, "").split("#")[0];
-      $(this).toggleClass("active", href === currentPage);
-    });
-
 
     /*=============================
         Hero Title + Breadcrumb
@@ -67,5 +69,4 @@
       if (breadcrumb) $hero.find(".breadcrumb-item.active").text(breadcrumb);
     }
   });
-
 })(jQuery);

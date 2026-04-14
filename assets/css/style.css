@@ -257,13 +257,11 @@ body {
 
   .loader-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
   }
 
-  .loading-text h1 {
-    font-size: 4rem !important;
-  }
+
 
   .pulse-circle img {
     width: 100%;

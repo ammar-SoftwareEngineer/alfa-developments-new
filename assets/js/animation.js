@@ -77,7 +77,11 @@ function imageReveal(tl, elements, vars = {}, position) {
   if (!tl || !targets.length) return;
   tl.fromTo(
     targets,
-    { autoAlpha: 0.3, y: vars.y ?? 18, scale: vars.scale ?? CONFIG.image.scale },
+    {
+      autoAlpha: 0.3,
+      y: vars.y ?? 18,
+      scale: vars.scale ?? CONFIG.image.scale,
+    },
     {
       autoAlpha: 1,
       y: 0,
@@ -94,7 +98,9 @@ function imageReveal(tl, elements, vars = {}, position) {
 function animateSlide(slide) {
   if (!slide) return;
   const image = slide.querySelector("img");
-  const texts = slide.querySelectorAll(".text-box h2, .text-box p, .text-box a, .text-box .btn");
+  const texts = slide.querySelectorAll(
+    ".text-box h2, .text-box p, .text-box a, .text-box .btn",
+  );
 
   gsap.killTweensOf([slide, image, ...texts]);
 
@@ -147,7 +153,9 @@ function initHeroSwiper() {
 }
 
 function initHeroParallax() {
-  const heroImages = document.querySelectorAll(".hero .swiper-slide img, .hero-mobile .swiper-slide img");
+  const heroImages = document.querySelectorAll(
+    ".hero .swiper-slide img, .hero-mobile .swiper-slide img",
+  );
   if (!heroImages.length) return;
 
   gsap.to(heroImages, {
@@ -169,12 +177,23 @@ function animateAbout() {
 
   const description = section.querySelectorAll(".lh-lg");
   const aboutCounters = section.querySelectorAll(".about-counter-card");
-  const counterValues = section.querySelectorAll(".about-counter-card .counter");
+  const counterValues = section.querySelectorAll(
+    ".about-counter-card .counter",
+  );
   const cta = section.querySelectorAll(".btn-send");
   const tl = makeTimeline(section);
-  fadeUp(tl, section.querySelectorAll(".header-section h2"), { y: 24, duration: 0.85, stagger: 0 });
+  fadeUp(tl, section.querySelectorAll(".header-section h2"), {
+    y: 24,
+    duration: 0.85,
+    stagger: 0,
+  });
   fadeUp(tl, description, { y: 24, duration: 0.9, stagger: 0 }, "-=0.45");
-  imageReveal(tl, section.querySelectorAll(".img-one, .img-two"), { y: 16, duration: 0.5 }, "-=0.55");
+  imageReveal(
+    tl,
+    section.querySelectorAll(".img-one, .img-two"),
+    { y: 16, duration: 0.5 },
+    "-=0.55",
+  );
   fadeUp(tl, cta, { y: 14, duration: 0.5, stagger: 0 }, "-=0.2");
   fadeUp(tl, aboutCounters, { y: 12, duration: 0.45, stagger: 0.04 }, "-=0.15");
   tl.call(
@@ -207,16 +226,28 @@ function animateAbout() {
   );
 }
 
-
-
 function animateProjects() {
   const section = document.querySelector(".projects-section");
   if (!section) return;
 
   const tl = makeTimeline(section);
-  fadeUp(tl, section.querySelectorAll(".header-section h2"), { y: 24, duration: 0.85, stagger: 0 });
-  fadeUp(tl, section.querySelectorAll(".header-section p"), { y: 22, duration: 0.85, stagger: 0 }, "-=0.45");
-  fadeUp(tl, section.querySelectorAll(".btn-send"), { y: 14, duration: 0.65, stagger: 0 }, "-=0.45");
+  fadeUp(tl, section.querySelectorAll(".header-section h2"), {
+    y: 24,
+    duration: 0.85,
+    stagger: 0,
+  });
+  fadeUp(
+    tl,
+    section.querySelectorAll(".header-section p"),
+    { y: 22, duration: 0.85, stagger: 0 },
+    "-=0.45",
+  );
+  fadeUp(
+    tl,
+    section.querySelectorAll(".btn-send"),
+    { y: 14, duration: 0.65, stagger: 0 },
+    "-=0.45",
+  );
   fadeUp(
     tl,
     section.querySelectorAll(".project-card"),
@@ -236,11 +267,11 @@ function animateContact() {
   if (!section) return;
 
   const tl = makeTimeline(section);
-  fadeUp(
-    tl,
-    section.querySelectorAll(".section-header h2, .form-header h3"),
-    { y: 20, duration: 0.82, stagger: 0.06 },
-  );
+  fadeUp(tl, section.querySelectorAll(".section-header h2, .form-header h3"), {
+    y: 20,
+    duration: 0.82,
+    stagger: 0.06,
+  });
   fadeUp(
     tl,
     section.querySelectorAll(".section-header p, .form-header p"),

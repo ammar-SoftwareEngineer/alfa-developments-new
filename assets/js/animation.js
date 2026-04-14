@@ -262,6 +262,59 @@ function animateProjects() {
   );
 }
 
+function animatePastProjects() {
+  const section = document.querySelector(".past-projects-section");
+  if (!section) return;
+
+  const tl = makeTimeline(section);
+  fadeUp(tl, section.querySelectorAll(".header-section h2"), {
+    y: 24,
+    duration: 0.85,
+    stagger: 0,
+  });
+  fadeUp(
+    tl,
+    section.querySelectorAll(".header-section p"),
+    { y: 20, duration: 0.8, stagger: 0 },
+    "-=0.45",
+  );
+  fadeUp(
+    tl,
+    section.querySelectorAll(".past-projects-tabs .nav-item"),
+    { y: 16, duration: 0.75, stagger: 0.05 },
+    "-=0.45",
+  );
+  fadeUp(
+    tl,
+    section.querySelectorAll(".tab-pane.show.active .past-project-card"),
+    { y: 24, scale: 0.97, duration: 0.85, stagger: 0.08 },
+    "-=0.4",
+  );
+
+  const tabButtons = section.querySelectorAll('[data-bs-toggle="tab"]');
+  tabButtons.forEach((button) => {
+    button.addEventListener("shown.bs.tab", (event) => {
+      const targetSelector = event.target.getAttribute("data-bs-target");
+      const pane = targetSelector ? document.querySelector(targetSelector) : null;
+      if (!pane) return;
+
+      const cards = pane.querySelectorAll(".past-project-card");
+      gsap.fromTo(
+        cards,
+        { autoAlpha: 0, y: 20, scale: 0.98 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.07,
+          ease: "power2.out",
+        },
+      );
+    });
+  });
+}
+
 function animateContact() {
   const section = document.querySelector(".contact-section");
   if (!section) return;
@@ -298,6 +351,7 @@ function animateGenericSections() {
     if (
       section.classList.contains("about-section") ||
       section.classList.contains("counter-section") ||
+      section.classList.contains("past-projects-section") ||
       section.classList.contains("projects-section") ||
       section.classList.contains("contact-section")
     ) {
@@ -320,6 +374,7 @@ function initAnimations() {
   initHeroSwiper();
   initHeroParallax();
   animateAbout();
+  animatePastProjects();
   animateProjects();
   animateContact();
   animateGenericSections();

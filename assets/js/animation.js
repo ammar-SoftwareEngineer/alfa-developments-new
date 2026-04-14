@@ -345,6 +345,36 @@ function animateContact() {
   );
 }
 
+function animateBlogs() {
+  const section = document.querySelector(".blogs-section");
+  if (!section) return;
+
+  const tl = makeTimeline(section);
+  fadeUp(tl, section.querySelectorAll(".header-section h2"), {
+    y: 22,
+    duration: 0.82,
+    stagger: 0,
+  });
+  fadeUp(
+    tl,
+    section.querySelectorAll(".header-section p, .header-section .btn-send"),
+    { y: 18, duration: 0.75, stagger: 0.06 },
+    "-=0.45",
+  );
+  fadeUp(
+    tl,
+    section.querySelectorAll(".blog-card"),
+    { y: 24, scale: 0.97, duration: 0.9, stagger: 0.1 },
+    "-=0.35",
+  );
+  imageReveal(
+    tl,
+    section.querySelectorAll(".blog-card__thumb img"),
+    { y: 14, scale: 1.1, duration: 1.1, stagger: 0.08 },
+    "<",
+  );
+}
+
 function animateGenericSections() {
   const sections = document.querySelectorAll(".animate-section");
   sections.forEach((section) => {
@@ -353,6 +383,7 @@ function animateGenericSections() {
       section.classList.contains("counter-section") ||
       section.classList.contains("past-projects-section") ||
       section.classList.contains("projects-section") ||
+      section.classList.contains("blogs-section") ||
       section.classList.contains("contact-section")
     ) {
       return;
@@ -376,6 +407,7 @@ function initAnimations() {
   animateAbout();
   animatePastProjects();
   animateProjects();
+  animateBlogs();
   animateContact();
   animateGenericSections();
   ScrollTrigger.refresh();

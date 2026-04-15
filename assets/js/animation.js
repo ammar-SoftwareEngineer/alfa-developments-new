@@ -486,6 +486,68 @@ function animateOffers() {
   );
 }
 
+function animateProjectDetails() {
+  const section = document.querySelector(".project-details-section");
+  if (!section) return;
+
+  const topRow = section.querySelector(".row.g-4.g-lg-5.align-items-stretch.mb-5.mb-lg-5");
+  const contentRow = section.querySelector(".row.g-4.g-lg-5.align-items-stretch:not(.mb-5):not(.mb-lg-5)");
+  const related = section.querySelector(".pd-related");
+
+  const heroTl = makeTimeline(topRow || section, "top 92%");
+  fadeUp(
+    heroTl,
+    section.querySelectorAll(".pd-gallery-wrap, .pd-video-card"),
+    { y: 24, duration: 0.88, stagger: 0.14 },
+  );
+  imageReveal(
+    heroTl,
+    section.querySelectorAll(".pd-gallery__img"),
+    { y: 14, scale: 1.08, duration: 1.05, stagger: 0.08 },
+    "-=0.42",
+  );
+
+  const bodyTl = makeTimeline(contentRow || section, "top 90%");
+  fadeUp(
+    bodyTl,
+    section.querySelectorAll(".pd-services-sidebar, .pd-article"),
+    { y: 22, duration: 0.86, stagger: 0.12 },
+  );
+  fadeUp(
+    bodyTl,
+    section.querySelectorAll(
+      ".pd-sidebar-title, .pd-services-list .pd-service-item, .pd-article__eyebrow, .pd-article__title, .pd-article-body p, .pd-services-sidebar .btn-send",
+    ),
+    { y: 16, duration: 0.74, stagger: 0.04 },
+    "-=0.5",
+  );
+
+  const relatedTl = makeTimeline(related || section, "top 88%");
+  fadeUp(
+    relatedTl,
+    section.querySelectorAll(".pd-related .header-section h2"),
+    { y: 22, duration: 0.82, stagger: 0 },
+  );
+  fadeUp(
+    relatedTl,
+    section.querySelectorAll(".pd-related .proj-card"),
+    { y: 24, scale: 0.97, duration: 0.86, stagger: 0.09 },
+    "-=0.35",
+  );
+  imageReveal(
+    relatedTl,
+    section.querySelectorAll(".pd-related .proj-card__img"),
+    { y: 12, scale: 1.08, duration: 1, stagger: 0.08 },
+    "<",
+  );
+  fadeUp(
+    relatedTl,
+    section.querySelectorAll(".pd-related .btn-send"),
+    { y: 14, duration: 0.65, stagger: 0 },
+    "-=0.2",
+  );
+}
+
 function animateGenericSections() {
   const sections = document.querySelectorAll(".animate-section");
   sections.forEach((section) => {
@@ -495,7 +557,8 @@ function animateGenericSections() {
       section.classList.contains("past-projects-section") ||
       section.classList.contains("projects-section") ||
       section.classList.contains("blogs-section") ||
-      section.classList.contains("contact-section")
+      section.classList.contains("contact-section") ||
+      section.classList.contains("project-details-section")
     ) {
       return;
     }
@@ -523,6 +586,7 @@ function initAnimations() {
   animateBlogs();
   animateServiceDetails();
   animateOffers();
+  animateProjectDetails();
   animateContact();
   animateGenericSections();
   ScrollTrigger.refresh();

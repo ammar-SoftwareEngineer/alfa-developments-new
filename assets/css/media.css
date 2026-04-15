@@ -73,6 +73,45 @@
 }
 
 @media (min-width: 992px) {
+  
 }
 @media (min-width: 1200px) {
+  .header-home.fixed-top {
+    .navbar {
+      .navbar-nav {
+        .nav-link {
+          color: var(--white-color) !important;
+        }
+      }
+    }
+    .navbar-brand {
+      img {
+        display: none;
+      }
+    }
+  
+    .navbar-brand-light {
+      img {
+        display: block;
+      }
+    }
+  }
+  .header-home.fixed {
+    .navbar {
+      .navbar-nav {
+        .nav-link {
+          color: var(--main-color) !important;
+        }
+      }
+    }
+    .navbar-brand-light img {
+      display: none;
+    }
+  
+    .navbar-brand {
+      img {
+        display: block;
+      }
+    }
+  }
 }

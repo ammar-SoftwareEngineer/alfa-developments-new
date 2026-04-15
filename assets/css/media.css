@@ -101,7 +101,11 @@
       .navbar-nav {
         .nav-link {
           color: var(--main-color) !important;
+          &:hover {
+            color: var(--white-color) !important;
+          }
         }
+
       }
     }
     .navbar-brand-light img {

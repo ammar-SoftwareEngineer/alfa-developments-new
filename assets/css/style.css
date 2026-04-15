@@ -314,7 +314,7 @@ body {
       }
 
       &:hover {
-        color: var(--black-color) !important;
+        color: var(--white-color) !important;
 
         &::before {
           width: 100%;
@@ -361,6 +361,7 @@ body {
 
   .nav-link {
     color: var(--main-color) !important;
+
   }
 }
 

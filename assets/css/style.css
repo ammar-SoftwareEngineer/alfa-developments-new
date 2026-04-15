@@ -2422,7 +2422,7 @@ body {
       line-height: 1.45;
       font-size: 1.15rem;
       font-weight: 700;
-      color: #1d2d45;
+      color: var(--main-color);
 
       a {
         color: inherit;
@@ -2510,7 +2510,7 @@ body {
 }
 
 .blog-details-title {
-  color: #1c2f4a;
+  color: var(--main-color);
   margin-bottom: 1rem;
   font-size: clamp(1.45rem, 3vw, 2.05rem);
 }

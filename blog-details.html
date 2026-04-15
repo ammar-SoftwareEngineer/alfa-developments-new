@@ -3,36 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Article | Clad Fine</title>
+    <title>Blog Details | Alfa Real Estate Development</title>
     <meta
       name="description"
-      content="Read this article from Clad Fine on interior design—insights on layout, finishes, lighting, and how to plan a cohesive space."
+      content="Read this article from Alfa Real Estate Development on New Cairo market insights, planning decisions, and practical real estate guidance."
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#1a1a1a" />
-    <link rel="canonical" href="https://cladfine.com/blog-details.html" />
+    <link rel="canonical" href="https://www.alfa-developments.com/blog-details.html" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Blog Article | Clad Fine" />
+    <meta property="og:title" content="Blog Details | Alfa Real Estate Development" />
     <meta
       property="og:description"
-      content="Read this article from Clad Fine on interior design—insights on layout, finishes, lighting, and how to plan a cohesive space."
+      content="Read this article from Alfa Real Estate Development on New Cairo market insights, planning decisions, and practical real estate guidance."
     />
-    <meta property="og:url" content="https://cladfine.com/blog-details.html" />
-    <meta property="og:site_name" content="Clad Fine" />
+    <meta property="og:url" content="https://www.alfa-developments.com/blog-details.html" />
+    <meta property="og:site_name" content="Alfa Real Estate Development" />
     <meta
       property="og:image"
-      content="https://cladfine.com/assets/images/slider/interior3.jpg"
+      content="https://www.alfa-developments.com/assets/images/blogs/1.jpg"
     />
-    <meta property="og:image:alt" content="Clad Fine blog article" />
+    <meta property="og:image:alt" content="Alfa Real Estate Development blog article" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blog Article | Clad Fine" />
+    <meta name="twitter:title" content="Blog Details | Alfa Real Estate Development" />
     <meta
       name="twitter:description"
-      content="Read this article from Clad Fine on interior design—insights on layout, finishes, lighting, and how to plan a cohesive space."
+      content="Read this article from Alfa Real Estate Development on New Cairo market insights, planning decisions, and practical real estate guidance."
     />
-    <meta name="twitter:image" content="https://cladfine.com/assets/images/slider/interior3.jpg" />
-    <meta name="article:publisher" content="https://cladfine.com/" />
+    <meta name="twitter:image" content="https://www.alfa-developments.com/assets/images/blogs/1.jpg" />
+    <meta name="article:publisher" content="https://www.alfa-developments.com/" />
 
     <link
       rel="shortcut icon"
@@ -64,10 +64,50 @@
 -->
     <header class="header" id="header"></header>
 
-    <div id="hero-pages" data-title="Blogs" data-breadcrumb="Blogs"></div>
+ 
     <!-- 
   ##################################################
-  #                     Bolgs                      #
+  #                 Hero Pages                     #
+  ##################################################
+-->
+<section
+class="hero-pages position-relative d-flex align-items-center"
+style="
+  height: 50vh;
+  background: url(./assets/images/slider/hero.jpg) center/cover no-repeat;
+  position: relative;
+  background-attachment: fixed;
+"
+>
+<div class="overlay"></div>
+<div class="container text-center text-white hero-content z-3">
+  <h1
+    class="display-3 fw-bold mb-4 "
+
+  > Blogs Details</h1>
+
+  <nav aria-label="breadcrumb">
+    <ol
+      class="breadcrumb d-flex justify-content-center gap-2 align-items-center text-white "
+      data-wow-delay="0.7s"
+    >
+      <li class="breadcrumb-item fs-4">
+        <a href="index.html" class="text-white-50 text-decoration-none"
+          >Home</a
+        >
+      </li>
+      <li class="fs-4">/</li>
+      <li
+        class="breadcrumb-item fw-bold active fs-4 text-white"
+        aria-current="page"
+      > Blogs Details </li>
+    </ol>
+  </nav>
+</div>
+</section>
+    <!-- 
+  ##################################################
+  #                 Blog Details                   #
   ##################################################
 -->
 
@@ -81,36 +121,20 @@
     <footer id="footer" class="shadow-lg"></footer>
 
     <!-- 
-##################################################
-#                  SOCIAL ICONS                  #
-##################################################
+  ##################################################
+  #                 Back To Top                    #
+  ##################################################
 -->
-
-<div
-class="social-icon position-fixed bottom-0 d-flex flex-column gap-1 z-3 wow fadeInRight"
-data-wow-duration="1s"
->
-<a
-  href="tel:010000000000"
-  class="btn d-flex align-items-center justify-content-center"
->
-  <i class="fas fa-phone"></i>
-</a>
-<a
-  href="http://wa.me/+201000000000"
-  target="_blank"
-  class="btn d-flex align-items-center justify-content-center"
->
-  <i class="fab fa-whatsapp"></i>
-</a>
-<!-- Back To Top start -->
-</div>
-<div class="back-to-top wow fadeInRight">
-<a id="back-top" class>
-  <i class="fas fa-long-arrow-up"></i>
-</a>
+<div class="back-to-top" id="backTop">
+  <span>Back Top</span>
+  <div class="progress-bar"></div>
 </div>
 
+    <!-- 
+  ##################################################
+  #                   Scripts                      #
+  ##################################################
+-->
 <script src="./assets/js/jquery-3.7.1.min.js"></script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
 <script src="./assets/js/swiper-bundle.min.js"></script>
@@ -123,9 +147,8 @@ data-wow-duration="1s"
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script>
   $("#header").load("app/header.html");
-  $("#loader").load("app/loader.html");
   $("#footer").load("app/footer.html");
-
+  $("#loader").load("app/loader.html");
 </script>
   </body>
 </html>

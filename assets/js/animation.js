@@ -226,6 +226,33 @@ function animateAbout() {
   );
 }
 
+function animateAboutLayout() {
+  const section = document.querySelector(".about-layout");
+  if (!section) return;
+
+  const rows = section.querySelectorAll(".about-layout-row");
+  rows.forEach((row, index) => {
+    const tl = makeTimeline(row, "top 90%");
+    fadeUp(
+      tl,
+      row.querySelectorAll(".about-layout-kicker, .about-layout-title, .about-layout-name"),
+      { y: 18, duration: 0.72, stagger: 0.05 },
+    );
+    fadeUp(
+      tl,
+      row.querySelectorAll(".about-layout-text, .about-layout-value, .about-layout-bullets li, .about-layout-numbered li"),
+      { y: 16, duration: 0.78, stagger: 0.04 },
+      "-=0.35",
+    );
+    imageReveal(
+      tl,
+      row.querySelectorAll(".about-layout-picture img"),
+      { y: 12, scale: 1.08, duration: 1, stagger: 0 },
+      index % 2 === 0 ? "<" : "-=0.2",
+    );
+  });
+}
+
 function animateProjects() {
   const section = document.querySelector(".projects-section");
   if (!section) return;
@@ -375,6 +402,90 @@ function animateBlogs() {
   );
 }
 
+function animateServices() {
+  const section = document.querySelector(".services-section");
+  if (!section) return;
+
+  const tl = makeTimeline(section);
+  fadeUp(tl, section.querySelectorAll(".header-section h2"), {
+    y: 22,
+    duration: 0.82,
+    stagger: 0,
+  });
+  fadeUp(
+    tl,
+    section.querySelectorAll(".header-section p"),
+    { y: 18, duration: 0.8, stagger: 0 },
+    "-=0.45",
+  );
+  fadeUp(
+    tl,
+    section.querySelectorAll(".service-card"),
+    { y: 24, scale: 0.98, duration: 0.86, stagger: 0.08 },
+    "-=0.35",
+  );
+  imageReveal(
+    tl,
+    section.querySelectorAll(".service-icon img"),
+    { y: 12, scale: 1.1, duration: 1.05, stagger: 0.06 },
+    "<",
+  );
+}
+
+function animateServiceDetails() {
+  const section = document.querySelector(".service-details-section");
+  if (!section) return;
+
+  const tl = makeTimeline(section);
+  fadeUp(
+    tl,
+    section.querySelectorAll(".sidebar h3, .sidebar .list-services li, .sidebar .btn-send"),
+    { y: 18, duration: 0.74, stagger: 0.05 },
+  );
+  fadeUp(
+    tl,
+    section.querySelectorAll(".header-section h2, .header-section p, h4, .service-features li, .btn-send"),
+    { y: 20, duration: 0.82, stagger: 0.04 },
+    "-=0.35",
+  );
+  imageReveal(
+    tl,
+    section.querySelectorAll("img"),
+    { y: 12, scale: 1.06, duration: 1.05, stagger: 0 },
+    "-=0.3",
+  );
+}
+
+function animateOffers() {
+  const section = document.querySelector(".offers-section");
+  if (!section) return;
+
+  const tl = makeTimeline(section);
+  fadeUp(tl, section.querySelectorAll(".header-section h2"), {
+    y: 22,
+    duration: 0.82,
+    stagger: 0,
+  });
+  fadeUp(
+    tl,
+    section.querySelectorAll(".header-section p"),
+    { y: 18, duration: 0.76, stagger: 0 },
+    "-=0.45",
+  );
+  fadeUp(
+    tl,
+    section.querySelectorAll(".blog-card"),
+    { y: 24, scale: 0.97, duration: 0.86, stagger: 0.09 },
+    "-=0.35",
+  );
+  imageReveal(
+    tl,
+    section.querySelectorAll(".blog-card__thumb img"),
+    { y: 14, scale: 1.1, duration: 1.05, stagger: 0.08 },
+    "<",
+  );
+}
+
 function animateGenericSections() {
   const sections = document.querySelectorAll(".animate-section");
   sections.forEach((section) => {
@@ -405,9 +516,13 @@ function initAnimations() {
   initHeroSwiper();
   initHeroParallax();
   animateAbout();
+  animateAboutLayout();
   animatePastProjects();
   animateProjects();
+  animateServices();
   animateBlogs();
+  animateServiceDetails();
+  animateOffers();
   animateContact();
   animateGenericSections();
   ScrollTrigger.refresh();

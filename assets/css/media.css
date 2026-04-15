@@ -37,7 +37,7 @@
   }
 
   .latest-projects-grid .project-card img {
-    height: clamp(200px, 52vw, 360px);
+    height: clamp(400px, 52vw, 360px);
   }
 }
 @media (max-width: 991px) {

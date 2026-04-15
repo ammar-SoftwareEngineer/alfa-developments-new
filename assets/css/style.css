@@ -551,11 +551,7 @@ body {
 }
 
 .offcanvas {
-  .offcanvas-header {
-    .navbar-brand img {
-      filter: invert(0) brightness(1) !important;
-    }
-  }
+
 
   .nav-link {
     position: relative;
@@ -571,7 +567,7 @@ body {
       font-weight 0.3s ease;
     z-index: 1;
     overflow: hidden;
-    width: fit-content;
+    width: fit-content !important;
 
     &::before {
       content: "";
@@ -1598,7 +1594,7 @@ body {
 
     img {
       width: 100%;
-      height: clamp(250px, 30vw, 450px);
+      height: clamp(400px, 30vw, 450px);
       object-fit: cover;
       transition: transform 0.45s ease;
     }

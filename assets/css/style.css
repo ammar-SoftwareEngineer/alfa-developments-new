@@ -504,31 +504,7 @@ body {
     }
   }
 
-  /* Social icons inside navbar */
-  .footer-social {
-    display: flex;
-    gap: 10px;
 
-    .social {
-      i {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: var(--main-color) !important;
-        color: var(--white-color) !important;
-        transition: all 0.4s ease;
-
-        &:hover {
-          background-color: var(--main-color) !important;
-          color: var(--white-color) !important;
-          transform: translateY(-10px);
-        }
-      }
-    }
-  }
 }
 
 .btn-lang {
@@ -581,16 +557,52 @@ body {
     }
   }
 
-  .offcanvas-body .nav-link {
-    color: var(--main-color) !important;
-    transition: all 0.3s ease;
+  .nav-link {
+    position: relative;
+    /* display: inline-block; */
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    color: var(--main-color);
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    transition:
+      color 0.3s ease,
+      font-weight 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
     width: fit-content;
-    font-size: 17px;
-    padding: 5px 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--main-color);
+
+      transition: width 0.4s ease;
+      z-index: -1;
+    }
 
     &:hover {
-      color: var(--main-color);
-      /* transform: translateX(5px); */
+      font-weight: bold;
+      color: var(--second-color) !important;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &.active {
+      font-weight: bold;
+      color: var(--second-color) !important;
+
+      &::before {
+        width: 100%;
+        transition: width 0.25s ease-in-out;
+      }
     }
   }
 
@@ -616,34 +628,24 @@ body {
       height: 45px;
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: #fff;
+      i {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 50%;
-        transform: translate(-50%, -50%);
+        background: var(--main-color) !important;
+        color: var(--white-color) !important;
         transition: all 0.4s ease;
-      }
-  
-      &:hover {
-        border-color: #fff;
-        transform: translateY(-5px);
-  
-        &::before {
-          width: 100%;
-          height: 100%;
-        }
-  
-        i {
-          color: var(--main-color);
-          position: relative;
-          z-index: 1;
+
+        &:hover {
+          background-color: var(--main-color) !important;
+          color: var(--white-color) !important;
+          transform: translateY(-10px);
         }
       }
+      
     }
     
   } 
